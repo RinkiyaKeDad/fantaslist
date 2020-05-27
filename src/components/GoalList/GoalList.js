@@ -2,10 +2,18 @@ import React from 'react';
 import './GoalList.css';
 
 const GoalList = props => {
+  console.log(props);
   return (
-    <ul className='goal-list'>
+    <ul className='list-group-flush'>
       {props.goals.map(goal => {
-        return <li key={goal.id}>{goal.text}</li>;
+        return (
+          <li className='list-group-item list-group-item-success' key={goal.id}>
+            {goal.text}
+            <button onClick={() => props.deleteHandler(goal.id)}>
+              <i className='fas fa-trash' />
+            </button>
+          </li>
+        );
       })}
     </ul>
   );

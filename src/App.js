@@ -4,20 +4,28 @@ import './App.css';
 import NewGoal from './components/NewGoal/NewGoal';
 
 const App = () => {
-  const [courseGoals, setCourseGoals] = useState([
-    { id: 'cg1', text: 'Finish the course' },
-    { id: 'cg2', text: 'Learn about the main topic' },
-    { id: 'cg3', text: 'help in QandA' },
-  ]);
+  const [courseGoals, setCourseGoals] = useState([]);
 
   const addNewGoal = newGoal => {
     setCourseGoals(prevCourseGoals => prevCourseGoals.concat(newGoal));
   };
+
+  const deleteList = id => {
+    setCourseGoals(prevCourseGoals =>
+      prevCourseGoals.filter(listItem => listItem.id !== id)
+    );
+  };
+
   return (
-    <div className='course-goals'>
-      <h2>Course Goals</h2>
+    <div className='course-goals container'>
+      <div className='header'>
+        <i className='fas fa-list-ol fa-3x' style={{ padding: '1rem' }} />
+        <h1 className='display-4' style={{ padding: '1rem' }}>
+          Fantas<mark>List</mark>
+        </h1>
+      </div>
       <NewGoal onGoalAdd={addNewGoal} />
-      <GoalList goals={courseGoals} />
+      <GoalList goals={courseGoals} deleteHandler={deleteList} />
     </div>
   );
 };

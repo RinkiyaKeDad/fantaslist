@@ -1,3 +1,18 @@
-.course-goals h2 {
+/*.course-goals h1 {
   text-align: center;
+}*/
+.header {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap-reverse;
+
+  justify-content: center;
+  align-items: center;
+}
+mark {
+  background-color: #77b31d;
+}
+i {
+  color: #77b31d;
+  margin-bottom: 0.6rem;
 }
