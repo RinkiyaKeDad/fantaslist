@@ -7,8 +7,19 @@ const App = () => {
   const [courseGoals, setCourseGoals] = useState([]);
 
   const addNewGoal = newGoal => {
-    setCourseGoals(prevCourseGoals => prevCourseGoals.concat(newGoal));
+    setCourseGoals(prevCourseGoals => {
+      var arr = prevCourseGoals.concat(); //this needs to be done so that a new array is present in arr and not just a refernece to the array of prev course goals
+      arr.unshift(newGoal);
+      console.log(prevCourseGoals);
+      console.log(arr);
+      console.log(courseGoals);
+      return arr;
+    });
   };
+
+  //CODE PRESENT INITIALLY IN ADDNEWGOAL WHICH ADDED THE GOAL TO THE BOTTOM OF THE LIST AND NOT THE TOP
+  //console.log(prevCourseGoals.concat(newGoal));
+  //return prevCourseGoals.concat(newGoal);
 
   const deleteList = id => {
     setCourseGoals(prevCourseGoals =>
