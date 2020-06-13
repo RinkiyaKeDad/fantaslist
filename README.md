@@ -2,7 +2,8 @@
 
 ## Deployed at: https://fantaslist.netlify.app/
 
-## Made using React using React Hooks to manage State. The website is fully responsive. Also used Bootstrap 4.
+## About the Project
+Made using React using React Hooks to manage State. The website is fully responsive. Also used Bootstrap 4.
 
 ## Contributions:
 
